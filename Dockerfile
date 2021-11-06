@@ -7,7 +7,7 @@ VOLUME /opt/youtransfer/config
 VOLUME /opt/youtransfer/uploads
 VOLUME /usr/sbin/sendmail
 
-WORKDIR 
+WORKDIR /usr/sbin/sendmail
 RUN npm install sendmail --save
 
 WORKDIR /opt/youtransfer/
