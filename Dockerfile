@@ -1,20 +1,16 @@
-FROM node:latest
+FROM node:0.12
 
 MAINTAINER YouTransfer.io (info@youtransfer.io)
 LABEL version="1.0.6"
 
 VOLUME /opt/youtransfer/config
 VOLUME /opt/youtransfer/uploads
-VOLUME /usr/sbin/sendmail
-
-WORKDIR /usr/sbin/sendmail
-RUN npm install sendmail --save
 
 WORKDIR /opt/youtransfer/
 RUN npm install youtransfer -g
 RUN youtransfer init
 RUN npm install
 
-EXPOSE 5000
+EXPOSE 8080
 
 CMD npm run dockerized
